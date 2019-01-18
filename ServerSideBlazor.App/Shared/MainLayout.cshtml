@@ -1,15 +1,27 @@
 ﻿@inherits BlazorLayoutComponent
 
-<div class="sidebar">
+<body class="hidden-sn grey-skin">
+
     <NavMenu />
-</div>
 
-<div class="main">
-    <div class="top-row px-4">
-        <a href="https://blazor.net" target="_blank" class="ml-md-auto">About</a>
-    </div>
-
-    <div class="content px-4">
+    <main>
         @Body
-    </div>
-</div>
+    </main>
+</body>
+
+@functions {
+    protected override async Task OnInitAsync()
+    {
+        await CallJS();
+    }
+
+    private async Task CallJS()
+    {
+        // Simple function call with a basic data type
+        if (await JSRuntime.Current.InvokeAsync<bool>("navigationInit"))
+        {
+            // This line will be reached as our `say` function returns true
+            Console.WriteLine("Returned true");
+        }
+    }
+}

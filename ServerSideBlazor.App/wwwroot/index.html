@@ -1,16 +1,27 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ServerSideBlazor</title>
     <base href="/" />
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/site.css" rel="stylesheet" />
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     <app>Loading...</app>
 
+    <!-- SCRIPTS -->
+    <!-- Server Side Blazor-->
     <script src="_framework/blazor.server.js"></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="js/materialize.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/custom.js"></script>
 </body>
 </html>
