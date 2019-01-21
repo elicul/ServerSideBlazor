@@ -10,18 +10,14 @@
 </body>
 
 @functions {
+    
     protected override async Task OnInitAsync()
     {
-        await CallJS();
-    }
-
-    private async Task CallJS()
-    {
-        // Simple function call with a basic data type
+        await Task.Delay(200);
         if (await JSRuntime.Current.InvokeAsync<bool>("navigationInit"))
         {
-            // This line will be reached as our `say` function returns true
-            Console.WriteLine("Returned true");
+            Console.WriteLine("Sidenav init success");
         }
     }
+
 }
