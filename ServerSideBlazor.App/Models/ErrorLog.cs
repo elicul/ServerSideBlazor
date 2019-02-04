@@ -9,6 +9,6 @@ namespace ServerSideBlazor.App.Models
     {
         public string ExceptionMessage { get; set; }
         public string Host { get; set; }
-        public int SeverityId { get; set; }
+        public Severity Severity { get; set; }
     }
 }

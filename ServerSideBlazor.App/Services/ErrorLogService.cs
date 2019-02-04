@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ServerSideBlazor.App.Services
 {
-    public class ErrorLogService
+    public class ErrorLogService : RetryPollyService
     {
         private IConfigurationRoot configRoot { get; set; }
 
@@ -17,7 +17,8 @@ namespace ServerSideBlazor.App.Services
         }
         public string GetJsonFile()
         {
-            return this.configRoot["EndpointConfigurations:Gateway"];
+            var result = GetRetry(this.configRoot["EndpointConfigurations:Gateway"] + "logging");
+            return result.ToString();
         }
     }
 }
